@@ -11,7 +11,8 @@
 	<script type="text/javascript" src="js/tanksDB.js"></script>
 </head>
 <body>
-	<div class="container" id="table-container">
+	<button class="btn btn-default disabled" id="flipBtn">Transpose</button>
+	<div class="table-container" id="table-container">
 	</div>
 </body>
 	<script type="text/javascript">
@@ -39,7 +40,7 @@
 		    	var t = document.createTextNode(nation.name);
 		    	var header = document.createElement("h2");
 		    	th.id = nation.name+"header";
-		    	th.colSpan = maxCol;
+		    	th.colSpan = 100;
 		    	header.appendChild(t);
 		    	th.appendChild(header);
 		    	tr.appendChild(th);
@@ -57,6 +58,8 @@
 		    			span.appendChild(t);
 		    			td.appendChild(span);
 		    			tr.appendChild(td);
+		    			tr.id = brs;
+		    			tr.className = "BRrows";
 
 		    			for (var i = 0; i < maxCol-1; i++) {
 		    				if(i<tanks.length){
@@ -78,6 +81,56 @@
 		    	}
 		    	tblContainer.appendChild(table);
 		    });
+
+		    $("#flipBtn").click(function(){
+			    $(".table").each(function() {
+			        var $this = $(this);
+			        var newrows = [];
+			        $this.find("tr").each(function(){
+			            var i = 0;
+			        	$(this).find("th").each(function(){
+			        		if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
+			        		newrows[i].append($(this));
+			        	});
+			            $(this).find("td").each(function(){
+			                i++;
+			                if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
+			                newrows[i].append($(this));
+			            });
+			        });
+			        $this.find("tr").remove();
+			        $.each(newrows, function(){
+			            $this.append(this);
+			        });
+			    });
+			    
+			    return false;
+			});
+
+			$(".table").delegate('td','mouseover mouseout', function(e) {
+				if (e.type == 'mouseover') {
+					if(!$(this).parent().prev().children().is("th")){
+						$(this).parent().prev().addClass("hover");
+					}
+					$(this).parent().addClass("hover");
+					$(this).parent().next().addClass("hover");
+					$("colgroup").eq($(this).index()).addClass("hover");
+				}
+				else {
+					$(this).parent().prev().removeClass("hover");
+					$(this).parent().removeClass("hover");
+					$(this).parent().next().removeClass("hover");
+					$("colgroup").eq($(this).index()).removeClass("hover");
+				}
+			});
+
+			$(".BRrows").click(function(){
+				console.log("test");
+				var selected = $(this).hasClass("active");
+			    $(".BRrows").removeClass("active");
+			    if(!selected)
+			            $(this).addClass("active");
+			});
 		});
 	</script>
 </html>

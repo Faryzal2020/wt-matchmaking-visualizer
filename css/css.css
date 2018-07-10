@@ -1,4 +1,9 @@
-	body { padding: 50px; }
+	body { padding: 50px; width: max-content;}
+	table { float: left; }
 	.normal { background-color: lightblue; }
 	.prem { background-color: gold }
 	.event { background-color: mediumpurple; color: white; }
+	tr { border: 2px solid lightgrey; border-bottom: none; cursor: pointer;}
+	.hover { border: 2px solid black;}
+	.disabled { pointer-events: none; }
+	.active { border: 3px solid red; }
