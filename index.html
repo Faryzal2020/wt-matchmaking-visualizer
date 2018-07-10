@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/css.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/tanksDB.js"></script>
+</head>
+<body>
+	<div class="container" id="table-container">
+	</div>
+</body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var tblContainer = document.getElementById("table-container");
+		    data.forEach(function(nation){
+		    	console.log(nation);
+		    	var table = document.createElement("table");
+		    	table.className = "table table-bordered";
+		    	table.id = nation.name+"table";
+
+		    	var maxCol = 1;
+		    	for(var brs in nation.br){
+		    		if(nation.br.hasOwnProperty(brs)){
+		    			var br = brs;
+		    			var tanks = nation.br[brs];
+		    			if(tanks.length > maxCol){
+		    				maxCol = tanks.length;
+		    			}
+		    		}
+		    	}
+		    	maxCol=maxCol+1;
+		    	var tr = document.createElement("tr");
+		    	var th = document.createElement("th");
+		    	var t = document.createTextNode(nation.name);
+		    	var header = document.createElement("h2");
+		    	th.id = nation.name+"header";
+		    	th.colSpan = maxCol;
+		    	header.appendChild(t);
+		    	th.appendChild(header);
+		    	tr.appendChild(th);
+		    	table.appendChild(tr);
+
+		    	for(var brs in nation.br){
+		    		if(nation.br.hasOwnProperty(brs)){
+		    			var br = brs;
+		    			var tanks = nation.br[brs];
+
+		    			var tr = document.createElement("tr");
+		    			var td = document.createElement("td");
+		    			var span = document.createElement("span");
+		    			var t = document.createTextNode(br);
+		    			span.appendChild(t);
+		    			td.appendChild(span);
+		    			tr.appendChild(td);
+
+		    			for (var i = 0; i < maxCol-1; i++) {
+		    				if(i<tanks.length){
+				    			td = document.createElement("td");
+				    			span = document.createElement("span");
+				    			t = document.createTextNode(tanks[i].tankname);
+				    			td.id = tanks[i].code;
+				    			td.className = "tankcell "+tanks[i].label;
+			    				span.appendChild(t);
+			    				td.appendChild(span);
+			    				tr.appendChild(td);
+		    				} else {
+		    					td = document.createElement("td");
+		    					tr.appendChild(td);
+		    				}
+		    			}
+		    			table.appendChild(tr);
+		    		}
+		    	}
+		    	tblContainer.appendChild(table);
+		    });
+		});
+	</script>
+</html>
