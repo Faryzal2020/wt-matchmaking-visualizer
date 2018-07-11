@@ -13,7 +13,7 @@
 	<script type="text/javascript" src="js/tanksDB.js"></script>
 </head>
 <body>
-	<button class="btn btn-default disabled" id="flipBtn" style="display: none">Transpose</button>
+	<button class="btn btn-outline-info" onclick="redirect('index.html')">Switch to Horizontal mode</button>
 	<div class="table-container" id="table-container">
 		<div class="tip">
 			<span class="brtooltip" style="display: none">BR: <span id="hoveredBR"></span></span>
@@ -113,5 +113,15 @@
 				}
 			});
 		});
+
+		function redirect(page){
+			var split = window.location.href.split("/")
+			var location = split[split.length-1];
+			var url = "";
+			for (var i = 0; i < split.length-1; i++) {
+				url = url + split[i] + "/"
+			}
+			window.location.replace(url+page);
+		}
 	</script>
 </html>
