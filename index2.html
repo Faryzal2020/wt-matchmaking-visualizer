@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/css2.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/popper.min.js"></script>
+	<script type="text/javascript" src="js/tooltip.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/tanksDB.js"></script>
+</head>
+<body>
+	<button class="btn btn-default disabled" id="flipBtn" style="display: none">Transpose</button>
+	<div class="table-container" id="table-container">
+		<div class="tip">
+			<span class="brtooltip" style="display: none">BR: <span id="hoveredBR"></span></span>
+			<span class="brtooltip">Max possible uptier: <span id="uptierBR"></span></span>
+			<span class="brtooltip" style="display: none">Max downtier: <span id="downtierBR"></span></span>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var tblContainer = document.getElementById("table-container");
+		    data.forEach(function(nation){
+		    	var table = document.createElement("table");
+		    	table.className = "table table-bordered";
+		    	table.id = nation.name+"table";
+
+		    	var tr = document.createElement("tr");
+		    	var td = document.createElement("td");
+		    	var t = document.createTextNode(nation.name);
+		    	var header = document.createElement("h2");
+		    	var btn = document.createElement("button");
+		    	btn.className = "hideBtn btn btn-outline-secondary btn-sm";
+		    	btn.value = nation.name;
+		    	btn.innerHTML = "Hide"; 
+		    	td.id = nation.name+"header";
+		    	td.className = "nationheader";
+		    	td.rowSpan = 100;
+
+		    	var trcontainer = document.createElement("div");
+		    	trcontainer.id = nation.name+"container";
+
+		    	header.appendChild(t);
+		    	td.appendChild(btn);
+		    	td.appendChild(header);
+		    	tr.appendChild(td);
+		    	table.appendChild(tr);
+
+		    	var maxrow = 0;
+		    	tr = document.createElement("tr");
+		    	for(var brs in nation.br){
+		    		if(nation.br.hasOwnProperty(brs)){
+		    			var br = brs;
+		    			var tanks = nation.br[brs];
+
+		    			if(tanks.length > maxrow){ maxrow = tanks.length;}
+		    			var td = document.createElement("td");
+		    			var span = document.createElement("span");
+		    			var t = document.createTextNode(br);
+		    			span.appendChild(t);
+		    			td.appendChild(span);
+		    			brs = brs.replace(".","-");
+		    			td.id = nation.name+brs;
+		    			td.className = "BRcols "+brs;
+		    			tr.appendChild(td);
+		    		}
+		    	}
+		    	trcontainer.appendChild(tr);
+
+		    	for (var i = 0; i < maxrow; i++) {
+			    	tr = document.createElement("tr");
+			    	for(var brs in nation.br){
+		    			if(nation.br.hasOwnProperty(brs)){
+			    			var br = brs;
+			    			var tanks = nation.br[brs];
+
+			    			if(tanks[i] !== undefined){
+				    			td = document.createElement("td");
+				    			span = document.createElement("span");
+				    			t = document.createTextNode(tanks[i].tankname);
+				    			td.id = tanks[i].code;
+				    			td.className = "tankcell "+tanks[i].label;
+			    				span.appendChild(t);
+			    				td.appendChild(span);
+			    				tr.appendChild(td);
+			    			} else {
+				    			td = document.createElement("td");
+			    				tr.appendChild(td);
+			    			}
+		    			}
+		    		}
+		    		trcontainer.appendChild(tr);
+		    	}
+
+		    	table.appendChild(trcontainer);
+		    	tblContainer.appendChild(table);
+		    });
+
+			$(".hideBtn").click(function(){
+				if(this.innerHTML == "Hide"){
+					$("#"+this.value+"container").hide();
+					$("#"+this.value+"header h2").hide();
+					this.innerHTML = "Show";
+				} else {
+					$("#"+this.value+"container").show();
+					$("#"+this.value+"header h2").show();
+					this.innerHTML = "Hide";
+				}
+			});
+		});
+	</script>
+</html>
