@@ -3,7 +3,7 @@
 	.normal { background-color: lightblue; }
 	.prem { background-color: gold }
 	.event { background-color: mediumpurple; color: white; }
-	td { width: fit-content; }
+	td { width: fit-content; font-size: 0.8em; padding: 0.3rem !important; }
 	tr { border: 2px solid lightgrey; border-bottom: none; cursor: pointer;}
 	.hover { border: 2px solid lightgrey; border-left-color: orange; border-right-color: orange;}
 	.hover1 { border: 2px solid gold; border-bottom: none; }
@@ -12,3 +12,23 @@
 	.hover4 { border: 2px solid gold; border-top: none; }
 	.disabled { pointer-events: none; }
 	.active { border: 3px solid red; }
+	.tooltip { display: inline-block; position: fixed; padding: .5em 1em; background-color: #f1f1f1 }
+	.btn { vertical-align: text-bottom; }
+	h2 { display: block; width: 100%; text-align: center; }
+	div.tip {
+
+	    /* Required */
+	    position: absolute;
+	    z-index: 2;
+	    display: none;
+
+	    /* Optional */
+	    font-size: 15px;
+	    max-width: 180px;
+	    height: auto;
+	    padding: 10px;
+	    border-radius: 3px;
+	    box-shadow: 0 1px 2px #666;
+	    background: #34BC9D;
+	}
+	span.brtooltip { display: block; }

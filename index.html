@@ -7,12 +7,19 @@
 	<link rel="stylesheet" href="css/css.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/popper.min.js"></script>
+	<script type="text/javascript" src="js/tooltip.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/tanksDB.js"></script>
 </head>
 <body>
 	<button class="btn btn-default disabled" id="flipBtn" style="display: none">Transpose</button>
 	<div class="table-container" id="table-container">
+		<div class="tip">
+			<span class="brtooltip">BR: <span id="hoveredBR"></span></span>
+			<span class="brtooltip">Max uptier: <span id="uptierBR"></span></span>
+			<span class="brtooltip">Max downtier: <span id="downtierBR"></span></span>
+		</div>
 	</div>
 </body>
 	<script type="text/javascript">
@@ -39,9 +46,14 @@
 		    	var th = document.createElement("th");
 		    	var t = document.createTextNode(nation.name);
 		    	var header = document.createElement("h2");
+		    	var btn = document.createElement("button");
+		    	btn.className = "hideBtn btn btn-outline-secondary btn-sm";
+		    	btn.value = nation.name+"table";
+		    	btn.innerHTML = "Hide"; 
 		    	th.id = nation.name+"header";
 		    	th.colSpan = 100;
 		    	header.appendChild(t);
+		    	th.appendChild(btn);
 		    	th.appendChild(header);
 		    	tr.appendChild(th);
 		    	table.appendChild(tr);
@@ -109,6 +121,7 @@
 			});
 
 			$(".table").delegate('td','mouseover mouseout', function(e) {
+				$('.tip').hide().removeAttr('style');
 				$("tr").each(function(){
 					$(this).removeClass("hover");
 					$(this).removeClass("hover1");
@@ -117,6 +130,8 @@
 					$(this).removeClass("hover4");
 				});
 				if (e.type == 'mouseover') {
+					$(".tip").show();
+
 					if(!$(this).parent().prev().prev().prev().children().is("th")){
 						$(this).parent().prev().prev().prev().addClass("hover1");
 					}
@@ -133,6 +148,8 @@
 
 					var rowclassname = $(this).parent().prop('className')
 					var brnumber = rowclassname.split(' ')[1]
+
+					
 					$("."+brnumber).each(function(){
 						if(!$(this).prev().prev().prev().children().is("th")){
 							$(this).prev().prev().prev().addClass("hover1");
@@ -148,8 +165,35 @@
 						$(this).next().next().addClass("hover3");
 						$(this).next().next().next().addClass("hover4");
 					});
+
+					if(brnumber == "reserve"){ brnumber = "0-0"; }
+					var intBR = parseFloat(brnumber.replace("-","."));
+					if(intBR - 1 < 1){
+						$("#downtierBR").html("reserve");
+					} else {
+						$("#downtierBR").html((intBR-1).toFixed(1));
+					}
+					if(intBR + 1 > 10){
+						$("#uptierBR").html("10.0");
+					} else if (intBR == 0) {
+						$("#uptierBR").html("1.7");
+					} else {
+						$("#uptierBR").html((intBR+1).toFixed(1));
+					}
+					if(intBR == 0){ intBR = "reserve";}
+					$("#hoveredBR").html(intBR);
 				}
-			});
+			}).mousemove(function(e) {
+        
+				var mouseX = e.pageX + 20;
+				var mouseY = e.pageY + 20;
+
+				$(".tip").css({
+
+				top:mouseY, left:mouseX
+
+				});
+			});;
 
 			$(".BRrows").click(function(){
 				console.log("test");
@@ -163,6 +207,18 @@
 						$(this).addClass("active");
 					});
 			    }
+			});
+
+			$(".hideBtn").click(function(){
+				if(this.innerHTML == "Hide"){
+					$("#"+this.value+" td").hide();
+					$("#"+this.value+" h2").hide();
+					this.innerHTML = "Show";
+				} else {
+					$("#"+this.value+" td").show();
+					$("#"+this.value+" h2").show();
+					this.innerHTML = "Hide";
+				}
 			});
 		});
 	</script>
