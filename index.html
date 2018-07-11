@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="js/tanksDB.js"></script>
 </head>
 <body>
-	<button class="btn btn-default disabled" id="flipBtn">Transpose</button>
+	<button class="btn btn-default disabled" id="flipBtn" style="display: none">Transpose</button>
 	<div class="table-container" id="table-container">
 	</div>
 </body>
@@ -58,8 +58,9 @@
 		    			span.appendChild(t);
 		    			td.appendChild(span);
 		    			tr.appendChild(td);
-		    			tr.id = brs;
-		    			tr.className = "BRrows";
+		    			brs = brs.replace(".","-");
+		    			tr.id = nation.name+brs;
+		    			tr.className = "BRrows "+brs;
 
 		    			for (var i = 0; i < maxCol-1; i++) {
 		    				if(i<tanks.length){
@@ -108,19 +109,45 @@
 			});
 
 			$(".table").delegate('td','mouseover mouseout', function(e) {
+				$("tr").each(function(){
+					$(this).removeClass("hover");
+					$(this).removeClass("hover1");
+					$(this).removeClass("hover2");
+					$(this).removeClass("hover3");
+					$(this).removeClass("hover4");
+				});
 				if (e.type == 'mouseover') {
+					if(!$(this).parent().prev().prev().prev().children().is("th")){
+						$(this).parent().prev().prev().prev().addClass("hover1");
+					}
+					if(!$(this).parent().prev().prev().children().is("th")){
+						$(this).parent().prev().prev().addClass("hover2");
+					}
 					if(!$(this).parent().prev().children().is("th")){
 						$(this).parent().prev().addClass("hover");
 					}
 					$(this).parent().addClass("hover");
 					$(this).parent().next().addClass("hover");
-					$("colgroup").eq($(this).index()).addClass("hover");
-				}
-				else {
-					$(this).parent().prev().removeClass("hover");
-					$(this).parent().removeClass("hover");
-					$(this).parent().next().removeClass("hover");
-					$("colgroup").eq($(this).index()).removeClass("hover");
+					$(this).parent().next().next().addClass("hover3");
+					$(this).parent().next().next().next().addClass("hover4");
+
+					var rowclassname = $(this).parent().prop('className')
+					var brnumber = rowclassname.split(' ')[1]
+					$("."+brnumber).each(function(){
+						if(!$(this).prev().prev().prev().children().is("th")){
+							$(this).prev().prev().prev().addClass("hover1");
+						}
+						if(!$(this).prev().prev().children().is("th")){
+							$(this).prev().prev().addClass("hover2");
+						}
+						if(!$(this).prev().children().is("th")){
+							$(this).prev().addClass("hover");
+						}
+						$(this).addClass("hover");
+						$(this).next().addClass("hover");
+						$(this).next().next().addClass("hover3");
+						$(this).next().next().next().addClass("hover4");
+					});
 				}
 			});
 
@@ -128,8 +155,14 @@
 				console.log("test");
 				var selected = $(this).hasClass("active");
 			    $(".BRrows").removeClass("active");
-			    if(!selected)
-			            $(this).addClass("active");
+			    if(!selected){
+	            	$(this).addClass("active");
+	            	var rowclassname = $(this).prop('className')
+					var brnumber = rowclassname.split(' ')[1]
+					$("."+brnumber).each(function(){
+						$(this).addClass("active");
+					});
+			    }
 			});
 		});
 	</script>

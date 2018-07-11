@@ -1,6 +1,437 @@
 var data = [
     {
-      name: 'german',
+      name: 'USA',
+      br: {
+        reserve: [
+          {
+            code: 'us00m2a4',
+            tankname: 'M2A4',
+            label: 'normal'
+          },
+          {
+            code: 'us00lvta1',
+            tankname: 'LVT(A)(1)',
+            label: 'normal'
+          }
+        ],
+        '1.0': [
+          {
+            code: 'us10m2a2',
+            tankname: 'M2A2',
+            label: 'normal'
+          },
+          {
+            code: 'us10m2a4',
+            tankname: 'M2A4 (1st Arm.Div)',
+            label: 'prem'
+          }
+        ],
+        '1.3': [
+          {
+            code: 'us13m3stuart',
+            tankname: 'M3 Stuart',
+            label: 'normal'
+          },
+          {
+            code: 'us13m2',
+            tankname: 'M2',
+            label: 'normal'
+          },
+          {
+            code: 'us13m13mgmc',
+            tankname: 'M13 MGMC',
+            label: 'normal'
+          },
+          {
+            code: 'us13m8',
+            tankname: 'M8',
+            label: 'event'
+          }
+        ],
+        '1.7': [
+          {
+            code: 'us17m3a1stuart',
+            tankname: 'M3A1 Stuart',
+            label: 'normal'
+          },
+          {
+            code: 'us17m3gmc',
+            tankname: 'M3 GMC',
+            label: 'normal'
+          }
+        ],
+        '2.0': [
+          {
+            code: 'us20m22',
+            tankname: 'M22 Locust',
+            label: 'normal'
+          },
+          {
+            code: 'us20m8',
+            tankname: 'M8 Scott',
+            label: 'normal'
+          }
+        ],
+        '2.3': [
+          {
+            code: 'us23m5a1',
+            tankname: 'M5A1',
+            label: 'normal'
+          },
+          {
+            code: 'us23m16mgmc',
+            tankname: 'M16 MGMC',
+            label: 'normal'
+          },
+          {
+            code: 'us23lvta4zis2',
+            tankname: 'LVT(A)(4) ZIS-2',
+            label: 'event'
+          },
+          {
+            code: 'us23m5a15tharmdiv',
+            tankname: 'M5A1 (5th arm.div.)',
+            label: 'prem'
+          }
+        ],
+        '2.7': [
+          {
+            code: 'us27m3lee',
+            tankname: 'M3 Lee',
+            label: 'normal'
+          },
+          {
+            code: 'us27m4a3105',
+            tankname: 'M4A3 (105)',
+            label: 'normal'
+          }
+        ],
+        '3.0': [
+          {
+            code: 'us30t18e2',
+            tankname: 'T18E2 Boarhound',
+            label: 'event'
+          }
+        ],
+        '3.3': [
+          {
+            code: 'us33m24',
+            tankname: 'M24',
+            label: 'normal'
+          },
+          {
+            code: 'us33m15a1cgmc',
+            tankname: 'M15A1 CGMC',
+            label: 'normal'
+          }
+        ],
+        '3.7': [
+          {
+            code: 'us37m4',
+            tankname: 'M4',
+            label: 'normal'
+          },
+          {
+            code: 'us37m10gmc',
+            tankname: 'M10 GMC',
+            label: 'normal'
+          },
+          {
+            code: 'us37m4a5',
+            tankname: 'M4A5',
+            label: 'prem'
+          }
+        ],
+        '4.0': [
+          {
+            code: 'us40m4a2',
+            tankname: 'M4A2',
+            label: 'normal'
+          }
+        ],
+        '4.3': [
+          {
+            code: 'us43t14',
+            tankname: 'T14',
+            label: 'prem'
+          },
+          {
+            code: 'us43calliope',
+            tankname: 'Calliope',
+            label: 'prem'
+          }
+        ],
+        '4.7': [
+          {
+            code: 'us47m4a176w',
+            tankname: 'M4A1 (76) W',
+            label: 'normal'
+          },
+          {
+            code: 'us47m6a1',
+            tankname: 'M6A1',
+            label: 'normal'
+          },
+          {
+            code: 'us47m4a3e2',
+            tankname: 'M4A3E2',
+            label: 'normal'
+          },
+          {
+            code: 'us47cobraking',
+            tankname: 'Cobra King',
+            label: 'prem'
+          }
+        ],
+        '5.0': [
+          {
+            code: 'us50m4a276w',
+            tankname: 'M4A2 (76) W',
+            label: 'normal'
+          },
+          {
+            code: 'us50m19',
+            tankname: 'M19',
+            label: 'normal'
+          },
+          {
+            code: 'us50t20',
+            tankname: 'T20',
+            label: 'prem'
+          }
+        ],
+        '5.3': [
+          {
+            code: 'us53m4a376w',
+            tankname: 'M4A3 (76) W',
+            label: 'normal'
+          },
+          {
+            code: 'us53m18gmc',
+            tankname: 'M18 GMC',
+            label: 'normal'
+          },
+          {
+            code: 'us53m18blackcat',
+            tankname: 'M18 "Black Cat"',
+            label: 'prem'
+          }
+        ],
+        '5.7': [
+          {
+            code: 'us57t25',
+            tankname: 'T25',
+            label: 'normal'
+          },
+          {
+            code: 'us57m4a3e276w',
+            tankname: 'M4A3E2 (76) W',
+            label: 'normal'
+          },
+          {
+            code: 'us57m36gmc',
+            tankname: 'M36 GMC',
+            label: 'normal'
+          }
+        ],
+        '6.0': [
+          {
+            code: 'us60m41a1',
+            tankname: 'M41A1',
+            label: 'normal'
+          }
+        ],
+        '6.3': [
+          {
+            code: 'us63m26',
+            tankname: 'M26',
+            label: 'normal'
+          },
+          {
+            code: 'us63superhellcat',
+            tankname: 'Super Hellcat',
+            label: 'prem'
+          },
+          {
+            code: 'us63t28',
+            tankname: 'T28',
+            label: 'prem'
+          }
+        ],
+        '6.7': [
+          {
+            code: 'us67m56',
+            tankname: 'M56',
+            label: 'normal'
+          },
+          {
+            code: 'us67t92',
+            tankname: 'T92',
+            label: 'normal'
+          },
+          {
+            code: 'us67m50ontos',
+            tankname: 'M50 Ontos',
+            label: 'normal'
+          },
+          {
+            code: 'us67t26e1',
+            tankname: 'T26E1-1',
+            label: 'normal'
+          },
+          {
+            code: 'us67t34',
+            tankname: 'T34',
+            label: 'normal'
+          },
+          {
+            code: 'us67m42duster',
+            tankname: 'M42 Duster',
+            label: 'normal'
+          },
+          {
+            code: 'us67t29',
+            tankname: 'T29',
+            label: 'prem'
+          },
+          {
+            code: 'us67m26t99',
+            tankname: 'M26 T99',
+            label: 'prem'
+          },
+          {
+            code: 'us67m26e1',
+            tankname: 'M26E1',
+            label: 'prem'
+          },
+          {
+            code: 'us67t114',
+            tankname: 'T114',
+            label: 'prem'
+          }
+        ],
+        '7.0': [
+          {
+            code: 'us70m46',
+            tankname: 'M46',
+            label: 'normal'
+          },
+          {
+            code: 'us70t32',
+            tankname: 'T32',
+            label: 'normal'
+          },
+          {
+            code: 'us70t95',
+            tankname: 'T95',
+            label: 'normal'
+          },
+          {
+            code: 'us70m46tiger',
+            tankname: 'M46 "Tiger"',
+            label: 'prem'
+          }
+        ],
+        '7.3': [
+          {
+            code: 'us73m47',
+            tankname: 'M47',
+            label: 'normal'
+          }
+        ],
+        '7.7': [
+          {
+            code: 'us77m60',
+            tankname: 'M60',
+            label: 'normal'
+          },
+          {
+            code: 'us77m48a1',
+            tankname: 'M48A1',
+            label: 'normal'
+          },
+          {
+            code: 'us77m103',
+            tankname: 'M103',
+            label: 'normal'
+          },
+          {
+            code: 'us77magach3',
+            tankname: 'Magach 3',
+            label: 'prem'
+          }
+        ],
+        '8.0': [
+          {
+            code: 'us80t95e1',
+            tankname: 'T95E1',
+            label: 'normal'
+          },
+          {
+            code: 'us80m163',
+            tankname: 'M163',
+            label: 'normal'
+          }
+        ],
+        '8.3': [
+          {
+            code: 'us83m551',
+            tankname: 'M551 Sheridan',
+            label: 'normal'
+          },
+          {
+            code: 'us83m60a1aos',
+            tankname: 'M60A1 (AOS)',
+            label: 'normal'
+          },
+          {
+            code: 'us83m60a2',
+            tankname: 'M60A2',
+            label: 'normal'
+          }
+        ],
+        '8.7': [
+          {
+            code: 'us87m60a1risep',
+            tankname: 'M60A1 RISE (P)',
+            label: 'normal'
+          },
+          {
+            code: 'us87xm803',
+            tankname: 'XM-803',
+            label: 'normal'
+          }
+        ],
+        '9.0': [
+          {
+            code: 'us90mbt70',
+            tankname: 'MBT-70',
+            label: 'normal'
+          },
+          {
+            code: 'us90xm1gm',
+            tankname: 'XM-1 (GM)',
+            label: 'prem'
+          },
+          {
+            code: 'us90xm1c',
+            tankname: 'XM-1 (C)',
+            label: 'prem'
+          }
+        ],
+        '9.3': [],
+        '9.7': [
+          {
+            code: 'us97m1abrams',
+            tankname: 'M1 Abrams',
+            label: 'normal'
+          }
+        ],
+        '10.0': []
+      }
+    },
+    {
+      name: 'German',
       br: {
         reserve: [
           {
@@ -493,6 +924,1418 @@ var data = [
           }
         ],
         '10.0': []
+      }
+    },
+    {
+      name: 'USSR',
+      br: {
+        reserve: [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '1.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '1.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '1.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '2.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '2.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '2.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '3.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '3.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '3.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '4.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '4.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '4.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '5.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '5.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '5.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '6.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '6.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '6.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '7.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '7.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '7.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '8.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '8.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '8.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '9.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '9.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '9.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '10.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ]
+      }
+    },
+    {
+      name: 'Great Britain',
+      br: {
+        reserve: [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '1.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '1.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '1.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '2.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '2.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '2.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '3.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '3.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '3.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '4.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '4.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '4.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '5.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '5.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '5.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '6.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '6.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '6.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '7.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '7.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '7.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '8.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '8.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '8.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '9.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '9.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '9.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '10.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ]
+      }
+    },
+    {
+      name: 'Japan',
+      br: {
+        reserve: [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '1.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '1.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '1.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '2.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '2.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '2.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '3.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '3.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '3.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '4.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '4.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '4.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '5.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '5.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '5.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '6.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '6.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '6.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '7.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '7.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '7.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '8.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '8.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '8.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '9.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '9.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '9.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '10.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ]
+      }
+    },
+    {
+      name: 'France',
+      br: {
+        reserve: [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '1.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '1.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '1.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '2.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '2.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '2.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '3.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '3.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '3.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '4.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '4.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '4.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '5.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '5.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '5.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '6.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '6.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '6.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '7.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '7.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '7.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '8.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '8.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '8.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '9.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '9.3': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '9.7': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ],
+        '10.0': [
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          },
+          {
+            code: '',
+            tankname: '',
+            label: 'normal'
+          }
+        ]
       }
     }
   ]
