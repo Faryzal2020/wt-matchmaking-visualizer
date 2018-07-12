@@ -24,6 +24,7 @@
 </body>
 	<script type="text/javascript">
 		$(document).ready(function() {
+
 			var tblContainer = document.getElementById("table-container");
 		    data.forEach(function(nation){
 		    	var table = document.createElement("table");
@@ -70,6 +71,7 @@
 		    			tr.appendChild(td);
 		    		}
 		    	}
+		    	tr.className = "brcontainer";
 		    	trcontainer.appendChild(tr);
 
 		    	for (var i = 0; i < maxrow; i++) {
@@ -105,16 +107,70 @@
 
 			allCells
 				.on("mouseover", function() {
+					if($(this).attr('class') != 'nationheader'){ $(".tip").show(); }
 					var el = $(this);
-					var elL = $(this).prev()
+					var elL = $(this).prev().prev();
+					var elR = $(this).next().next();
+					var elL2 = $(this).prev().prev().prev();
+					var elR2 = $(this).next().next().next();
 					pos = el.index();
 					posL = elL.index();
-					allCells.filter(":nth-child(" + (pos+1) + ")").addClass("hover");
-					allCells.filter(":nth-child(" + (posL+1) + ")").addClass("hover");
+					posR = elR.index();
+					posL2 = elL2.index();
+					posR2 = elR2.index();
+					allCells.filter(":not('.nationheader')").filter(":nth-child(" + (pos+1) + ")").addClass("hover");
+					allCells.filter(":not('.nationheader')").filter(":nth-child(" + (posL+1) + ")").addClass("hoverL");
+					allCells.filter(":not('.nationheader')").filter(":nth-child(" + (posR+1) + ")").addClass("hoverR");
+					allCells.filter(":not('.nationheader')").filter(":nth-child(" + (posL2+1) + ")").addClass("hoverL2");
+					allCells.filter(":not('.nationheader')").filter(":nth-child(" + (posR2+1) + ")").addClass("hoverR2");
+
+					var index = $(this).index();
+					var brnumber = $(this).parent().parent().children().eq(0).children().eq(index).attr("class").split(' ')[1]
+
+					if(brnumber == "reserve"){ brnumber = "0-0"; }
+					if(brnumber !== undefined){
+						var intBR = parseFloat(brnumber.replace("-","."));
+						if(intBR - 1 < 1){
+							$("#downtierBR").html("reserve");
+						} else {
+							$("#downtierBR").html((intBR-1).toFixed(1));
+						}
+						if(intBR + 1 > 10){
+							$("#uptierBR").html("10.0");
+						} else if (intBR == 0) {
+							$("#uptierBR").html("1.7");
+						} else {
+							$("#uptierBR").html((intBR+1).toFixed(1));
+						}
+						if(intBR == 0){ intBR = "reserve";}
+						$("#hoveredBR").html(intBR);
+					}
 				})
 				.on("mouseout", function() {
+					$('.tip').hide().removeAttr('style');
 					allCells.removeClass("hover");
+					allCells.removeClass("hoverL");
+					allCells.removeClass("hoverR");
+					allCells.removeClass("hoverL2");
+					allCells.removeClass("hoverR2");
+				})
+				.mousemove(function(e) {
+					var mouseX = e.pageX + 20;
+					var mouseY = e.pageY + 20;
+
+					$(".tip").css({
+						top:mouseY, left:mouseX
+					});
 				});
+
+			allCells.click(function(){
+				var el = $(this);
+				var selected = $(this).hasClass("active");
+				allCells.removeClass("active");
+				if(!selected){
+					allCells.filter(":not('.nationheader')").filter(":nth-child(" + (pos+1) + ")").addClass("active");
+				}
+			});
 
 			$(".hideBtn").click(function(){
 				if(this.innerHTML == "Hide"){
@@ -127,6 +183,27 @@
 					this.innerHTML = "Hide";
 				}
 			});
+
+
+			$.fn.attachDragger = function(){
+			    var attachment = false, lastPosition, position, difference;
+			    $( $(this).selector ).on("mousedown mouseup mousemove",function(e){
+			        if( e.type == "mousedown" ) attachment = true, lastPosition = [e.clientX, e.clientY];
+			        if( e.type == "mouseup" ) attachment = false;
+			        if( e.type == "mousemove" && attachment == true ){
+			            position = [e.clientX, e.clientY];
+			            difference = [ (position[0]-lastPosition[0]), (position[1]-lastPosition[1]) ];
+			            $(this).scrollLeft( $(this).scrollLeft() - difference[0] );
+			            $(this).scrollTop( $(this).scrollTop() - difference[1] );
+			            lastPosition = [e.clientX, e.clientY];
+			        }
+			    });
+			    $(window).on("mouseup", function(){
+			        attachment = false;
+			    });
+			}
+			
+			$("body").attachDragger();
 		});
 
 		function redirect(page){

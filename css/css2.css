@@ -7,9 +7,12 @@
 	.event { background-color: mediumpurple; color: white; }
 	td { width: fit-content; font-size: 0.8em; padding: 0.3rem !important; }
 	tr { border: 2px solid lightgrey; border-bottom: none; cursor: pointer;}
-	.hover { border: 2px solid gold !important; border-bottom: none !important; border-top: none !important;}
+	.hoverL { border-left: 2px solid orange !important;}
+	.hoverR { border-right: 2px solid orange !important;}
+	.hoverL2 { border-left: 2px solid gold !important;}
+	.hoverR2 { border-right: 2px solid gold !important;}
 	.disabled { pointer-events: none; }
-	.active { border: 3px solid red; }
+	.active { border-left: 3px solid red !important; border-right: 3px solid red !important; }
 	.tooltip { display: inline-block; position: fixed; padding: .5em 1em; background-color: #f1f1f1 }
 	.btn { vertical-align: text-bottom; }
 	h2 { display: block; width: 100%; text-align: center; }
@@ -23,6 +26,7 @@
 	    /* Optional */
 	    font-size: 15px;
 	    max-width: 180px;
+	    min-width: 180px;
 	    height: auto;
 	    padding: 10px;
 	    border-radius: 3px;

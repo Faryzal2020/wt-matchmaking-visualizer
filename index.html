@@ -95,31 +95,6 @@
 		    	tblContainer.appendChild(table);
 		    });
 
-		    $("#flipBtn").click(function(){
-			    $(".table").each(function() {
-			        var $this = $(this);
-			        var newrows = [];
-			        $this.find("tr").each(function(){
-			            var i = 0;
-			        	$(this).find("th").each(function(){
-			        		if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
-			        		newrows[i].append($(this));
-			        	});
-			            $(this).find("td").each(function(){
-			                i++;
-			                if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
-			                newrows[i].append($(this));
-			            });
-			        });
-			        $this.find("tr").remove();
-			        $.each(newrows, function(){
-			            $this.append(this);
-			        });
-			    });
-			    
-			    return false;
-			});
-
 			$(".table").delegate('td','mouseover mouseout', function(e) {
 				$('.tip').hide().removeAttr('style');
 				$("tr").each(function(){
@@ -193,10 +168,9 @@
 				top:mouseY, left:mouseX
 
 				});
-			});;
+			});
 
 			$(".BRrows").click(function(){
-				console.log("test");
 				var selected = $(this).hasClass("active");
 			    $(".BRrows").removeClass("active");
 			    if(!selected){
