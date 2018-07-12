@@ -14,16 +14,43 @@
 </head>
 <body>
 	<button class="btn btn-outline-info" onclick="redirect('vertical.html')">Switch to Vertical mode</button>
-	<div class="table-container" id="table-container">
-		<div class="tip">
-			<span class="brtooltip" style="display: none">BR: <span id="hoveredBR"></span></span>
-			<span class="brtooltip">Max possible uptier: <span id="uptierBR"></span></span>
-			<span class="brtooltip" style="display: none">Max downtier: <span id="downtierBR"></span></span>
+	<div class="dropdown" style="display: inline-block;">
+		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+			Select BR
+		</button>
+		<div class="dropdown-menu" id="dropdown-menu">
+			<button class="dropdown-item tableFilter" value="all" >Show all</button>
 		</div>
+	</div>
+	<button class="btn btn-outline-info" disabled>Showing: <span id="filterDisplay"></span></button>
+	<div class="tip">
+		<span class="brtooltip" style="display: none">BR: <span id="hoveredBR"></span></span>
+		<span class="brtooltip">Max possible uptier: <span id="uptierBR"></span></span>
+		<span class="brtooltip" style="display: none">Max downtier: <span id="downtierBR"></span></span>
+	</div>
+	<div class="table-container" id="table-container">
 	</div>
 </body>
 	<script type="text/javascript">
 		$(document).ready(function() {
+			var brList = getBRlist();
+			for (var i = 0; i < brList.length; i++) {
+				var btn = document.createElement("button");
+				var att = document.createAttribute("value");
+				btn.className = "dropdown-item tableFilter";
+				att.value = brList[i];
+				btn.innerHTML = brList[i];
+				btn.setAttributeNode(att); 
+				$("#dropdown-menu").append(btn);
+			}
+
+			$(".tableFilter").click(function(){
+				selectBR($(this).val());
+				if (typeof(Storage) !== "undefined"){
+					localStorage.setItem("filter",$(this).val());
+				}
+			});
+
 			var tblContainer = document.getElementById("table-container");
 		    data.forEach(function(nation){
 		    	console.log(nation);
@@ -169,6 +196,20 @@
 
 				});
 			});
+
+			var filter = "";
+
+			if (typeof(Storage) !== "undefined") {
+				if(localStorage.filter){
+					filter = localStorage.filter;
+				} else {
+					localStorage.setItem("filter","all");
+					filter = localStorage.filter;
+				}
+				$("#filterDisplay").html(filter);
+				selectBR(filter);
+				console.log("Filter: "+filter);
+			}
 
 			$(".BRrows").click(function(){
 				var selected = $(this).hasClass("active");

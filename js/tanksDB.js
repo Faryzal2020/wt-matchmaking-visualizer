@@ -2340,5 +2340,34 @@ var data = [
     }
   ]
 
-function getTankData(id){
+function getBRlist(){
+  var brList = [];
+  for(var brs in data[0].br){
+    if(data[0].br.hasOwnProperty(brs)){
+      brList.push(brs);
+    }
+  }
+  return brList;
+}
+
+function selectBR(fil){
+  var brList = getBRlist();
+  if(fil != "all"){
+    $(".BRrows").hide();
+    $("#filterDisplay").html(fil);
+    if(fil == "reserve"){ fil = "0.7"}
+    for (var i = 0; i < brList.length; i++) {
+      if(brList[i] == "reserve"){brList[i] = "0.7";}
+      if(parseFloat(brList[i]) >= parseFloat(fil)-1 && parseFloat(brList[i]) <= parseFloat(fil)+1 ){
+        if(brList[i] == "0.7"){
+          $(".reserve").show();
+        } else {
+          var br = brList[i].replace(".","-");
+          $("."+br).show();
+        }
+      }
+    }
+  } else {
+    $(".BRrows").show();
+  }
 }
