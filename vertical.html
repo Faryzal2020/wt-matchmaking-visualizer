@@ -4,13 +4,13 @@
 	<title></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/css2.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/popper.min.js"></script>
 	<script type="text/javascript" src="js/tooltip.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/tanksDB.js"></script>
+	<link rel="stylesheet" href="css/css2.css">
 </head>
 <body>
 	<button class="btn btn-outline-info" onclick="redirect('index.html')">Switch to Horizontal mode</button>
@@ -100,6 +100,21 @@
 		    	table.appendChild(trcontainer);
 		    	tblContainer.appendChild(table);
 		    });
+
+			var allCells = $("td");
+
+			allCells
+				.on("mouseover", function() {
+					var el = $(this);
+					var elL = $(this).prev()
+					pos = el.index();
+					posL = elL.index();
+					allCells.filter(":nth-child(" + (pos+1) + ")").addClass("hover");
+					allCells.filter(":nth-child(" + (posL+1) + ")").addClass("hover");
+				})
+				.on("mouseout", function() {
+					allCells.removeClass("hover");
+				});
 
 			$(".hideBtn").click(function(){
 				if(this.innerHTML == "Hide"){

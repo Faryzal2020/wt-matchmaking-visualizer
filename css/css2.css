@@ -7,11 +7,7 @@
 	.event { background-color: mediumpurple; color: white; }
 	td { width: fit-content; font-size: 0.8em; padding: 0.3rem !important; }
 	tr { border: 2px solid lightgrey; border-bottom: none; cursor: pointer;}
-	.hover { border: 2px solid lightgrey; border-left-color: orange; border-right-color: orange;}
-	.hover1 { border: 2px solid gold; border-bottom: none; }
-	.hover2 { border: 2px solid orange; border-bottom: none; }
-	.hover3 { border: 2px solid orange; border-top: none; }
-	.hover4 { border: 2px solid gold; border-top: none; }
+	.hover { border: 2px solid gold !important; border-bottom: none !important; border-top: none !important;}
 	.disabled { pointer-events: none; }
 	.active { border: 3px solid red; }
 	.tooltip { display: inline-block; position: fixed; padding: .5em 1em; background-color: #f1f1f1 }
