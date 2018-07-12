@@ -2352,9 +2352,9 @@ function getBRlist(){
 
 function selectBR(fil){
   var brList = getBRlist();
+  $("#filterDisplay").html(fil);
   if(fil != "all"){
     $(".BRrows").hide();
-    $("#filterDisplay").html(fil);
     if(fil == "reserve"){ fil = "0.7"}
     for (var i = 0; i < brList.length; i++) {
       if(brList[i] == "reserve"){brList[i] = "0.7";}
