@@ -13,22 +13,33 @@
 	<script type="text/javascript" src="js/tanksDB.js"></script>
 </head>
 <body>
-	<button class="btn btn-outline-info" onclick="redirect('vertical.html')">Switch to Vertical mode</button>
-	<div class="dropdown" style="display: inline-block;">
-		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-			Select BR
-		</button>
-		<div class="dropdown-menu" id="dropdown-menu">
-			<button class="dropdown-item tableFilter" value="all" >Show all</button>
+	<div id="sidemenu" class="sidemenu">
+		<div class="sidemenu-contents">
+			<span>WIP</span>
+			<div id="summary">
+				
+			</div>
 		</div>
 	</div>
-	<button class="btn btn-outline-info" disabled>Showing: <span id="filterDisplay"></span></button>
-	<div class="tip">
-		<span class="brtooltip" style="display: none">BR: <span id="hoveredBR"></span></span>
-		<span class="brtooltip">Max possible uptier: <span id="uptierBR"></span></span>
-		<span class="brtooltip" style="display: none">Max downtier: <span id="downtierBR"></span></span>
-	</div>
-	<div class="table-container" id="table-container">
+	<div id="main">
+		<button class="btn btn-info summaryBtn" id="summaryBtn" onclick="toggleNav()">Summary</button>
+		<button class="btn btn-outline-info" onclick="redirect('vertical.html')">Switch to Vertical mode</button>
+		<div class="dropdown" style="display: inline-block;">
+			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+				Select BR
+			</button>
+			<div class="dropdown-menu" id="dropdown-menu">
+				<button class="dropdown-item tableFilter" value="all" >Show all</button>
+			</div>
+		</div>
+		<button class="btn btn-outline-info" disabled>Showing: <span id="filterDisplay"></span></button>
+		<div class="tip">
+			<span class="brtooltip" style="display: none">BR: <span id="hoveredBR"></span></span>
+			<span class="brtooltip">Max possible uptier: <span id="uptierBR"></span></span>
+			<span class="brtooltip" style="display: none">Max downtier: <span id="downtierBR"></span></span>
+		</div>
+		<div class="table-container" id="table-container">
+		</div>
 	</div>
 </body>
 	<script type="text/javascript">
@@ -236,6 +247,26 @@
 				}
 			});
 		});
+
+		function toggleNav(){
+			if($("#sidemenu").children().hasClass("open")){
+				closeNav();
+			} else {
+				openNav();
+			}
+		}
+		function openNav() {
+		    document.getElementById("sidemenu").style.width = "350px";
+		    document.getElementById("main").style.marginLeft = "350px";
+		    $("#summaryBtn").css('left',parseInt($('#summaryBtn').css('left').replace("px",""))+350+"px")
+		    $("#sidemenu").children().addClass("open");
+		}
+		function closeNav() {
+		    document.getElementById("sidemenu").style.width = "0px";
+		    document.getElementById("main").style.marginLeft = "0px";
+		    $("#summaryBtn").css('left',parseInt($('#summaryBtn').css('left').replace("px",""))-350+"px")
+		    $("#sidemenu").children().removeClass("open");
+		}
 
 		function redirect(page){
 			var split = window.location.href.split("/")

@@ -34,3 +34,71 @@
 	span.brtooltip { display: block; }
 	.dropdown-item { padding: 0.15rem 1.4rem; font-size: 0.8em; cursor: pointer;}
 	.dropdown-menu { top: unset !important; transform: unset !important; min-width: 7rem; }
+	.sidemenu-contents { visibility: hidden; opacity: 0; padding: 20px; color: white; transition: 0.1s; }
+	.sidemenu-contents span { font-size: 1.2em; }
+	.sidemenu-contents.open { visibility: visible; opacity: 1; transition: 0.3s; transition-delay: 0.2s; }
+	.summaryBtn {
+		position: fixed;
+		left: -22px;
+		top: 91px;
+		z-index: 2;
+		transform: rotate(-90deg); 
+		font-size: 1.3em; 
+		padding: 17px 10px;
+		border-top: unset;
+		border-top-right-radius: unset;
+		border-top-left-radius: unset;
+		transition: 0.5s;
+	}
+
+		/* The side navigation menu */
+	.sidemenu {
+	    height: 100%; /* 100% Full-height */
+	    width: 0px; /* 0 width - change this with JavaScript */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Stay on top */
+	    top: 0; /* Stay at the top */
+	    left: 0;
+	    background-color: #17a2b8; /* Black*/
+	    overflow-x: hidden; /* Disable horizontal scroll */
+	    padding-top: 60px; /* Place content 60px from the top */
+	    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	}
+
+	/* The navigation menu links */
+	.sidemenu a {
+	    padding: 8px 8px 8px 32px;
+	    text-decoration: none;
+	    font-size: 25px;
+	    color: #818181;
+	    display: block;
+	    transition: 0.3s;
+	}
+
+	/* When you mouse over the navigation links, change their color */
+	.sidemenu a:hover {
+	    color: #f1f1f1;
+	}
+
+	/* Position and style the close button (top right corner) */
+	.sidemenu .closebtn {
+	    position: absolute;
+	    top: 0;
+	    right: 25px;
+	    font-size: 36px;
+	    margin-left: 50px;
+	}
+
+	/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+	#main {
+	    transition: margin-left .5s;
+	    padding: 20px;
+	    padding-left: 40px;
+	    display: inline-block;
+	}
+
+	/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+	@media screen and (max-height: 450px) {
+	    .sidemenu {padding-top: 15px;}
+	    .sidemenu a {font-size: 18px;}
+	}

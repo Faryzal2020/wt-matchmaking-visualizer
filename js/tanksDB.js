@@ -50,17 +50,17 @@ var data = [
         ],
         '1.7': [
           {
-            code: 'us17m3a1stuart',
-            tankname: 'M3A1 Stuart',
-            label: 'normal'
-          },
-          {
             code: 'us17m3gmc',
             tankname: 'M3 GMC',
             label: 'normal'
           }
         ],
         '2.0': [
+          {
+            code: 'us17m3a1stuart',
+            tankname: 'M3A1 Stuart',
+            label: 'normal'
+          },
           {
             code: 'us20m22',
             tankname: 'M22 Locust',
@@ -243,6 +243,16 @@ var data = [
         ],
         '6.3': [
           {
+            code: 'us67m26t99',
+            tankname: 'M26 T99',
+            label: 'prem'
+          },
+          {
+            code: 'us67t26e1',
+            tankname: 'T26E1-1',
+            label: 'normal'
+          },
+          {
             code: 'us63m26',
             tankname: 'M26',
             label: 'normal'
@@ -275,11 +285,6 @@ var data = [
             label: 'normal'
           },
           {
-            code: 'us67t26e1',
-            tankname: 'T26E1-1',
-            label: 'normal'
-          },
-          {
             code: 'us67t34',
             tankname: 'T34',
             label: 'normal'
@@ -292,11 +297,6 @@ var data = [
           {
             code: 'us67t29',
             tankname: 'T29',
-            label: 'prem'
-          },
-          {
-            code: 'us67m26t99',
-            tankname: 'M26 T99',
             label: 'prem'
           },
           {
@@ -390,22 +390,16 @@ var data = [
             label: 'normal'
           }
         ],
-        '8.7': [
-          {
-            code: 'us87m60a1risep',
-            tankname: 'M60A1 RISE (P)',
-            label: 'normal'
-          },
+        '8.7': [],
+        '9.0': [
           {
             code: 'us87xm803',
             tankname: 'XM-803',
             label: 'normal'
-          }
-        ],
-        '9.0': [
+          },
           {
-            code: 'us90mbt70',
-            tankname: 'MBT-70',
+            code: 'us87m60a1risep',
+            tankname: 'M60A1 RISE (P)',
             label: 'normal'
           },
           {
@@ -419,15 +413,21 @@ var data = [
             label: 'prem'
           }
         ],
-        '9.3': [],
-        '9.7': [
+        '9.3': [
+          {
+            code: 'us90mbt70',
+            tankname: 'MBT-70',
+            label: 'normal'
+          },
+        ],
+        '9.7': [],
+        '10.0': [
           {
             code: 'us97m1abrams',
             tankname: 'M1 Abrams',
             label: 'normal'
           }
-        ],
-        '10.0': []
+        ]
       }
     },
     {
@@ -886,19 +886,20 @@ var data = [
             label: 'normal'
           },
           {
-            code: 'ger83leoparda1a1',
-            tankname: 'Leopard A1A1',
-            label: 'normal'
-          }
-        ],
-        '8.7': [
-          {
             code: 'ger87begleitpanzer57',
             tankname: 'Begleitpanzer 57',
             label: 'normal'
           }
         ],
+        '8.7': [],
         '9.0': [
+          {
+            code: 'ger83leoparda1a1',
+            tankname: 'Leopard A1A1',
+            label: 'normal'
+          }
+        ],
+        '9.3': [
           {
             code: 'ger90rakjpz2hot',
             tankname: 'RakJPz 2 (HOT)',
@@ -908,22 +909,22 @@ var data = [
             code: 'ger90kpz70',
             tankname: 'KPz-70',
             label: 'normal'
-          },
+          }
+        ],
+        '9.7': [
           {
             code: 'ger90leopard2k',
             tankname: 'Leopard 2K',
             label: 'normal'
           }
         ],
-        '9.3': [],
-        '9.7': [
+        '10.0': [
           {
             code: 'ger97leopard2a4',
             tankname: 'Leopard 2A4',
             label: 'normal'
           }
-        ],
-        '10.0': []
+        ]
       }
     },
     {
@@ -931,352 +932,504 @@ var data = [
       br: {
         reserve: [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr00bt5',
+            tankname: 'BT-5',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr00t26',
+            tankname: 'T-26',
             label: 'normal'
           }
         ],
         '1.0': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr10t60',
+            tankname: 'T-60',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr10t264',
+            tankname: 'T-26-4',
             label: 'normal'
+          },
+          {
+            code: 'ussr10gazaaa4m',
+            tankname: 'GAZ-AAA (4M)',
+            label: 'normal'
+          },
+          {
+            code: 'ussr10gazaaadshk',
+            tankname: 'GAZ-AAA (DShK)',
+            label: 'normal'
+          },
+          {
+            code: 'ussr10t261stgvtbr',
+            tankname: 'T-26 (1st Gv.T.Br)',
+            label: 'prem'
           }
         ],
         '1.3': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr13bt7',
+            tankname: 'BT-7',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
-            label: 'normal'
-          }
-        ],
-        '1.7': [
-          {
-            code: '',
-            tankname: '',
+            code: 'ussr13su51',
+            tankname: 'SU-5-1',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
-            label: 'normal'
+            code: 'ussr13t35',
+            tankname: 'T-35',
+            label: 'prem'
           }
         ],
+        '1.7': [],
         '2.0': [
           {
-            code: '',
-            tankname: '',
-            label: 'normal'
-          },
-          {
-            code: '',
-            tankname: '',
+            code: 'ussr20t70',
+            tankname: 'T-70',
             label: 'normal'
           }
         ],
         '2.3': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr23t28',
+            tankname: 'T-28',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr23t80',
+            tankname: 'T-80',
             label: 'normal'
+          },
+          {
+            code: 'ussr23zis30',
+            tankname: 'ZiS-30',
+            label: 'normal'
+          },
+          {
+            code: 'ussr23su76m',
+            tankname: 'SU-76M',
+            label: 'normal'
+          },
+          {
+            code: 'ussr23gazmm72k',
+            tankname: 'GAZ-MM (72-K)',
+            label: 'normal'
+          },
+          {
+            code: 'ussr23su57',
+            tankname: 'SU-57',
+            label: 'prem'
+          },
+          {
+            code: 'ussr23bm824',
+            tankname: 'BM-8-24',
+            label: 'prem'
+          },
+          {
+            code: 'ussr23t3',
+            tankname: 'T-III',
+            label: 'prem'
+          },
+          {
+            code: 'ussr23su76m5thgvkavcorp',
+            tankname: 'SU-76M (5th Gv.Kav.Corp)',
+            label: 'event'
           }
         ],
         '2.7': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr27t50',
+            tankname: 'T-50',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr27t28e',
+            tankname: 'T-28E',
             label: 'normal'
+          },
+          {
+            code: 'ussr27t126',
+            tankname: 'T-126',
+            label: 'prem'
+          },
+          {
+            code: 'ussr27zut37',
+            tankname: 'ZUT-37',
+            label: 'prem'
           }
         ],
         '3.0': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr30su122',
+            tankname: 'SU-122',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr30btr152a',
+            tankname: 'BTR-152A',
             label: 'normal'
           }
         ],
         '3.3': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr33t341940',
+            tankname: 'T-34 (1940)',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr33zis1294km',
+            tankname: 'ZiS-12 (94-KM)',
             label: 'normal'
+          },
+          {
+            code: 'ussr33mk2matilda',
+            tankname: 'MK-II <<Matilda>>',
+            label: 'event'
           }
         ],
         '3.7': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr37t341941',
+            tankname: 'T-34 (1941)',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr37t341942',
+            tankname: 'T-34 (1942)',
             label: 'normal'
+          },
+          {
+            code: 'ussr37kv1l11',
+            tankname: 'KV-1 (L-11)',
+            label: 'normal'
+          },
+          {
+            code: 'ussr37yag1029k',
+            tankname: 'YaG-10 (29-K)',
+            label: 'normal'
+          },
+          {
+            code: 'ussr37bm13n',
+            tankname: 'BM-13N',
+            label: 'event'
+          },
+          {
+            code: 'ussr37smk',
+            tankname: 'SMK',
+            label: 'prem'
           }
         ],
         '4.0': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr40t34estz',
+            tankname: 'T-34E STZ',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr40zis43',
+            tankname: 'ZiS-43',
             label: 'normal'
           }
         ],
         '4.3': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr43t3457',
+            tankname: 'T-34-57',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr43kv1zis5',
+            tankname: 'KV-1 (ZiS-5)',
+            label: 'normal'
+          },
+          {
+            code: 'ussr43asu57',
+            tankname: 'ASU-57',
+            label: 'normal'
+          },
+          {
+            code: 'ussr43kv1s',
+            tankname: 'KV-1S',
+            label: 'normal'
+          },
+          {
+            code: 'ussr43kv2',
+            tankname: 'KV-2',
             label: 'normal'
           }
         ],
         '4.7': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr47su85',
+            tankname: 'SU-85',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr47t34571943',
+            tankname: 'T-34-57 (1943)',
+            label: 'prem'
+          },
+          {
+            code: 'ussr47zsu37',
+            tankname: 'ZSU-37',
             label: 'normal'
           }
         ],
         '5.0': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr50kv85',
+            tankname: 'KV-85',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr50su152',
+            tankname: 'SU-152',
             label: 'normal'
+          },
+          {
+            code: 'ussr50m4a2',
+            tankname: 'M4A2',
+            label: 'prem'
           }
         ],
         '5.3': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr53t3485d5t',
+            tankname: 'T-34-85 (D-5T)',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr53is1',
+            tankname: 'IS-1',
+            label: 'normal'
+          },
+          {
+            code: 'ussr53isu152',
+            tankname: 'ISU-152',
+            label: 'normal'
+          },
+          {
+            code: 'ussr53su100y',
+            tankname: 'SU-100Y',
+            label: 'prem'
+          },
+          {
+            code: 'ussr53kv2zis6',
+            tankname: 'KV-2 (ZiS-6)',
+            label: 'prem'
+          },
+          {
+            code: 'ussr53pt76b',
+            tankname: 'PT-76B',
             label: 'normal'
           }
         ],
         '5.7': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr57t3485',
+            tankname: 'T-34-85',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr57is2',
+            tankname: 'IS-2',
             label: 'normal'
+          },
+          {
+            code: 'ussr57isu122',
+            tankname: 'ISU-122',
+            label: 'normal'
+          },
+          {
+            code: 'ussr57kv122',
+            tankname: 'KV-122',
+            label: 'prem'
           }
         ],
         '6.0': [
           {
-            code: '',
-            tankname: '',
-            label: 'normal'
-          },
-          {
-            code: '',
-            tankname: '',
+            code: 'ussr60isu122s',
+            tankname: 'ISU-122S',
             label: 'normal'
           }
         ],
         '6.3': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr63t44',
+            tankname: 'T-44',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr63is21944',
+            tankname: 'IS-2 (1944)',
             label: 'normal'
+          },
+          {
+            code: 'ussr63asu85',
+            tankname: 'ASU-85',
+            label: 'normal'
+          },
+          {
+            code: 'ussr63su100',
+            tankname: 'SU-100',
+            label: 'normal'
+          },
+          {
+            code: 'ussr63t44122',
+            tankname: 'T-44-122',
+            label: 'prem'
+          },
+          {
+            code: 'ussr63su122p',
+            tankname: 'SU-122P',
+            label: 'prem'
           }
         ],
         '6.7': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr67su100p',
+            tankname: 'SU-100P',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
-            label: 'normal'
+            code: 'ussr67t34100',
+            tankname: 'T-34-100',
+            label: 'prem'
+          },
+          {
+            code: 'ussr67type62',
+            tankname: 'Type-62',
+            label: 'event'
           }
         ],
         '7.0': [
           {
-            code: '',
-            tankname: '',
-            label: 'normal'
-          },
-          {
-            code: '',
-            tankname: '',
+            code: 'ussr70t44100',
+            tankname: 'T-44-100',
             label: 'normal'
           }
         ],
         '7.3': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr73is3',
+            tankname: 'IS-3',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr73bmp1',
+            tankname: 'BMP-1',
             label: 'normal'
+          },
+          {
+            code: 'ussr73su12254',
+            tankname: 'SU-122-54',
+            label: 'normal'
+          },
+          {
+            code: 'ussr73obj268',
+            tankname: 'Object 268',
+            label: 'normal'
+          },
+          {
+            code: 'ussr73is6',
+            tankname: 'IS-6',
+            label: 'prem'
           }
         ],
         '7.7': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr77t541947',
+            tankname: 'T-54 (1947)',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr77t541949',
+            tankname: 'T-54 (1949)',
             label: 'normal'
+          },
+          {
+            code: 'ussr77t541951',
+            tankname: 'T-54 (1951)',
+            label: 'normal'
+          },
+          {
+            code: 'ussr77is4m',
+            tankname: 'IS-4M',
+            label: 'normal'
+          },
+          {
+            code: 'ussr77zsu572',
+            tankname: 'ZSU-57-2',
+            label: 'normal'
+          },
+          {
+            code: 'ussr77obj120',
+            tankname: 'Object 120',
+            label: 'prem'
           }
         ],
         '8.0': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr80obj906',
+            tankname: 'Object 906',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr80zsu234',
+            tankname: 'ZSU-23-4',
             label: 'normal'
           }
         ],
         '8.3': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr83t62',
+            tankname: 'T-62',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr83t10m',
+            tankname: 'T-10M',
             label: 'normal'
           }
         ],
         '8.7': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr87t55a',
+            tankname: 'T-55A',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr87it1',
+            tankname: 'IT-1',
             label: 'normal'
           }
         ],
-        '9.0': [
-          {
-            code: '',
-            tankname: '',
-            label: 'normal'
-          },
-          {
-            code: '',
-            tankname: '',
-            label: 'normal'
-          }
-        ],
+        '9.0': [],
         '9.3': [
           {
-            code: '',
-            tankname: '',
+            code: 'ussr93t62m1',
+            tankname: 'T-62M-1',
             label: 'normal'
           },
           {
-            code: '',
-            tankname: '',
+            code: 'ussr93t64a1971',
+            tankname: 'T-64A (1971)',
             label: 'normal'
           }
         ],
         '9.7': [
           {
-            code: '',
-            tankname: '',
-            label: 'normal'
-          },
-          {
-            code: '',
-            tankname: '',
+            code: 'ussr97t64b',
+            tankname: 'T-64B',
             label: 'normal'
           }
         ],
-        '10.0': [
-          {
-            code: '',
-            tankname: '',
-            label: 'normal'
-          },
-          {
-            code: '',
-            tankname: '',
-            label: 'normal'
-          }
-        ]
+        '10.0': []
       }
     },
     {
@@ -2369,5 +2522,42 @@ function selectBR(fil){
     }
   } else {
     $(".BRrows").show();
+  }
+}
+
+function selectBR2(fil){
+  var brList = getBRlist();
+  $("#filterDisplay").html(fil);
+  if(fil != "all"){
+    $("td").filter(":not('.nationheader')").hide();
+
+    if(fil == "reserve"){ fil = "0.7"}
+    for (var i = 0; i < brList.length; i++) {
+      if(brList[i] == "reserve"){brList[i] = "0.7";}
+      if(parseFloat(brList[i]) >= parseFloat(fil)-1 && parseFloat(brList[i]) <= parseFloat(fil)+1 ){
+        if(brList[i] == "0.7"){
+          toggleColumn("reserve","show");
+        } else {
+          toggleColumn(brList[i],"show");
+        }
+      }
+    }
+    
+  } else {
+    $("td").filter(":not('.nationheader')").show();
+  }
+}
+
+function toggleColumn(br, action){
+  var allCells = $("td");
+  if(br != "reserve"){br = br.replace(".","-");}
+  
+  if(action == "hide"){
+    var index = $("."+br).index() + 1;
+    $("tr").children().eq(index).filter(":not('.nationheader')").hide();
+  } else {
+    var index = $("."+br).index() + 1;
+    allCells.filter(":not('.nationheader')").filter(":nth-child(" + (index) + ")").show();
+    console.log($("td").eq(index))
   }
 }
