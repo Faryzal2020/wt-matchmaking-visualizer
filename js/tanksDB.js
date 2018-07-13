@@ -2503,7 +2503,8 @@ function getBRlist(){
   return brList;
 }
 
-function selectBR(fil){
+function selectBR(fil,mode){
+  console.log(mode);
   var brList = getBRlist();
   $("#filterDisplay").html(fil);
   if(fil != "all"){
@@ -2511,7 +2512,13 @@ function selectBR(fil){
     if(fil == "reserve"){ fil = "0.7"}
     for (var i = 0; i < brList.length; i++) {
       if(brList[i] == "reserve"){brList[i] = "0.7";}
-      if(parseFloat(brList[i]) >= parseFloat(fil)-1 && parseFloat(brList[i]) <= parseFloat(fil)+1 ){
+
+      var bottomlim = 1;
+      var upperlim = 1;
+      if(mode == "uptier"){ bottomlim = 0 }
+      if(mode == "downtier"){ upperlim = 0 }
+
+      if(parseFloat(brList[i]) >= parseFloat(fil)-bottomlim && parseFloat(brList[i]) <= parseFloat(fil)+upperlim ){
         if(brList[i] == "0.7"){
           $(".reserve").show();
         } else {
@@ -2525,7 +2532,7 @@ function selectBR(fil){
   }
 }
 
-function selectBR2(fil){
+function selectBR2(fil,mode){
   var brList = getBRlist();
   $("#filterDisplay").html(fil);
   if(fil != "all"){
@@ -2559,5 +2566,17 @@ function toggleColumn(br, action){
     var index = $("."+br).index() + 1;
     allCells.filter(":not('.nationheader')").filter(":nth-child(" + (index) + ")").show();
     console.log($("td").eq(index))
+  }
+}
+
+function setFilterMode(mode){
+  $("#filterModeDisplay").html(mode);
+  localStorage.setItem("filtermode",mode);
+  var split = window.location.href.split("/")
+  var location = split[split.length-1];
+  if(location == "index.html"){
+    selectBR(localStorage.filter,localStorage.filtermode);
+  } else {
+    selectBR2(localStorage.filter,localStorage.filtermode);
   }
 }

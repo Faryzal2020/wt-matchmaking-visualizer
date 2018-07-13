@@ -33,6 +33,17 @@
 			</div>
 		</div>
 		<button class="btn btn-outline-info" disabled>Showing: <span id="filterDisplay"></span></button>
+		<div class="dropdown" style="display: inline-block;">
+			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+				Filter Mode
+			</button>
+			<div class="dropdown-menu">
+				<button class="dropdown-item" onclick="setFilterMode('both')">Both</button>
+				<button class="dropdown-item" onclick="setFilterMode('uptier')">Uptier</button>
+				<button class="dropdown-item" onclick="setFilterMode('downtier')">Downtier</button>
+			</div>
+		</div>
+		<button class="btn btn-outline-info" disabled>Filter mode: <span id="filterModeDisplay"></span></button>
 		<div class="tip">
 			<span class="brtooltip" style="display: none">BR: <span id="hoveredBR"></span></span>
 			<span class="brtooltip">Max possible uptier: <span id="uptierBR"></span></span>
@@ -56,7 +67,7 @@
 			}
 
 			$(".tableFilter").click(function(){
-				selectBR($(this).val());
+				selectBR($(this).val(),localStorage.filtermode);
 				if (typeof(Storage) !== "undefined"){
 					localStorage.setItem("filter",$(this).val());
 				}
@@ -209,7 +220,7 @@
 			});
 
 			var filter = "";
-
+			var filtermode = "";
 			if (typeof(Storage) !== "undefined") {
 				if(localStorage.filter){
 					filter = localStorage.filter;
@@ -217,8 +228,15 @@
 					localStorage.setItem("filter","all");
 					filter = localStorage.filter;
 				}
+				if(localStorage.filtermode){
+					filtermode = localStorage.filtermode;
+				} else {
+					localStorage.setItem("filtermode","both");
+					filtermode = localStorage.filtermode;
+				}
 				$("#filterDisplay").html(filter);
-				selectBR(filter);
+				$("#filterModeDisplay").html(filtermode);
+				selectBR(filter,filtermode);
 				console.log("Filter: "+filter);
 			}
 
